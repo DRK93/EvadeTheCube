@@ -42,12 +42,21 @@ public class PlayerController : MonoBehaviour
             horizontalPosition,
             1,
             transform.position.z);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ExitGame();
     }
     public void ReceiveDamage()
     {
         Debug.Log("Ouch");
         m_Stats.UpdateHealth(10);
         hudManager.UpdateHealthText(m_Stats.health);
+    }
+    
+    public void ExitGame()
+    {
+        
+            Application.Quit();
     }
 }
 
