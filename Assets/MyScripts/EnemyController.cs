@@ -16,9 +16,11 @@ namespace MyScripts
         public EnemyType enemyType;
         private float m_TresholdPositionZ =-20.0f;
         private PlayerController m_Pc;
+        private Timer m_Timer;
         private void Start()
         {
             m_Pc = GameObject.Find("Player").GetComponent<PlayerController>();
+            m_Timer = GameObject.Find("Timer").GetComponent<Timer>();
             RandomizeSpeed();
         }
         private void Update()
@@ -59,6 +61,7 @@ namespace MyScripts
 
         private void RandomizeSpeed()
         {
+            speed += m_Timer.speedUp;
             speed = speed * Random.Range(1f, 2.5f);
         }
     }

@@ -12,7 +12,7 @@ namespace MyScripts
         public Vector2 spawnRangeX;
         void Start()
         {
-            InvokeRepeating(nameof(SpawnEvader), 0, 2.0f);
+            InvokeRepeating(nameof(SpawnEvader), 0, 1.0f);
             InvokeRepeating(nameof(SpawnCatcher), 1.0f, 2.0f);
             InvokeRepeating(nameof(SpawnSaver), 10.0f, 15.0f);
         }
