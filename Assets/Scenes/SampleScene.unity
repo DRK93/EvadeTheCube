@@ -486,7 +486,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6804202267972471622, guid: 6f451503d3cdf66428886723f711b3c5, type: 3}
-  enemy2Prefab: {fileID: 7769029804234711016, guid: 5f7492a3f79a3e444a1625669902adbf, type: 3}
+  enemyPrefab2: {fileID: 7769029804234711016, guid: 5f7492a3f79a3e444a1625669902adbf, type: 3}
+  enemyPrefab3: {fileID: 7769029804234711016, guid: 6576dee661cbd7b4594998da7a9f31dc, type: 3}
   spawnRangeX: {x: -7.7, y: 7.7}
 --- !u!4 &726805538
 Transform:
@@ -709,6 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 60
+  points: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

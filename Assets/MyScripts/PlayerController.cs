@@ -56,6 +56,12 @@ namespace  MyScripts
             m_Stats.UpdatePoints(10);
             hudManager.UpdateScore(m_Stats.points);
         }
+
+        public void ReceiveHealth()
+        {
+            m_Stats.UpdateHealth(-10);
+            hudManager.UpdateHealthText(m_Stats.health);
+        }
     }
 }
 

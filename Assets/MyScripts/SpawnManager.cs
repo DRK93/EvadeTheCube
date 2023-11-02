@@ -7,12 +7,14 @@ namespace MyScripts
     public class SpawnManager : MonoBehaviour
     {
         public GameObject enemyPrefab;
-        public GameObject enemy2Prefab;
+        public GameObject enemyPrefab2;
+        public GameObject enemyPrefab3;
         public Vector2 spawnRangeX;
         void Start()
         {
             InvokeRepeating(nameof(SpawnEvader), 0, 2.0f);
             InvokeRepeating(nameof(SpawnCatcher), 1.0f, 2.0f);
+            InvokeRepeating(nameof(SpawnSaver), 10.0f, 15.0f);
         }
 
         private void SpawnCatcher()
@@ -23,6 +25,11 @@ namespace MyScripts
         private void SpawnEvader()
         {
             SpawnEnemy(EnemyType.Evader);
+        }
+
+        private void SpawnSaver()
+        {
+            SpawnEnemy(EnemyType.Saver);
         }
         private void SpawnEnemy(EnemyType enemyType)
         {
@@ -40,12 +47,20 @@ namespace MyScripts
                     enemyPrefab.transform.rotation
                 );
             }
+            else if(enemyType == EnemyType.Catcher)
+            {
+                Instantiate(
+                    enemyPrefab2,
+                    spawnPosition,
+                    enemyPrefab2.transform.rotation
+                );
+            }
             else
             {
                 Instantiate(
-                    enemy2Prefab,
+                    enemyPrefab3,
                     spawnPosition,
-                    enemy2Prefab.transform.rotation
+                    enemyPrefab3.transform.rotation
                 );
             }
         }

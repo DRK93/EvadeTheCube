@@ -7,7 +7,8 @@ namespace MyScripts
     public enum EnemyType
     {
         Catcher,
-        Evader
+        Evader,
+        Saver
     }
     public class EnemyController : MonoBehaviour
     {
@@ -37,6 +38,11 @@ namespace MyScripts
                 if (enemyType == EnemyType.Catcher)
                 {
                     m_Pc.ReceivePoints();
+                }
+
+                if (enemyType == EnemyType.Saver)
+                {
+                    m_Pc.ReceiveHealth();
                 }
                 Destroy(gameObject);
             }
