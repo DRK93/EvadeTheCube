@@ -9,9 +9,10 @@ namespace  MyScripts
     {
     
         public HudManager hudManager;
-        public float speed;
+        public GameMenuManager gameMenuManager;
         public Transform leftWall;
         public Transform rightWall;
+        public float speed;
         private Stats m_Stats;
     
         private void Awake()
@@ -21,9 +22,14 @@ namespace  MyScripts
         }
         private void Update()
         {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                gameMenuManager.PauseGame();
+            }
             if(m_Stats.health <= 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //gameMenuManager.PauseGame();
             }
     
             float horizontalInput = Input.GetAxis("Horizontal");
