@@ -18,6 +18,7 @@ namespace MyScripts
         private void Start()
         {
             m_Pc = GameObject.Find("Player").GetComponent<PlayerController>();
+            RandomizeSpeed();
         }
         private void Update()
         {
@@ -48,6 +49,11 @@ namespace MyScripts
             { 
                 Destroy(gameObject);
             }
+        }
+
+        private void RandomizeSpeed()
+        {
+            speed = speed * Random.Range(1f, 2.5f);
         }
     }
 }
